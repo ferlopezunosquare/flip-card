@@ -1,0 +1,234 @@
+@import './src/styles.scss';
+
+h1{
+  margin-top: -15%;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius !important;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.container {
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+ 
+  }
+  
+  .flipper {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    border: 1px solid $gray-border;
+    margin-right:10px;
+    margin-bottom: 1px;
+    @include border-radius(5px);
+    border-top: 10px solid $gray-border;  
+  }
+  .flipper:hover{
+    box-shadow: 0px 8px 5px $gray-border, 
+    -5px 8px 15px $gray-border, 5px 5px 15px $gray-border;
+    border-top: 10px solid $primary !important;
+    border: none;
+  }
+  .row{
+    height: 100px;
+  }
+  .sides {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    color: #fff;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+    user-select: none;
+    @include border-radius(5px);
+  }
+
+  .front {
+    background:white;
+    -webkit-transform: rotateY( 0deg );
+    -moz-transform: rotateY( 0deg );
+    -o-transform: rotateY( 0deg );
+    transform: rotateY( 0deg );
+   
+
+  }
+  .back {
+    background:white;
+    -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+  }
+  .columns.is-centered {
+    justify-content: center;
+}
+#flipFront{
+    background: none;
+    border:none;
+    position: relative;
+    right: -1%;
+    bottom: 22%;
+    color: $dark-blue;
+    font-size: 15px;
+    width: 150px;
+    font-weight: bold;
+    
+}
+#flipBack{
+  background: none;
+  border:none;
+  position: relative;
+  right: 2%;
+  top: 27%;
+  color: $dark-blue;
+  font-size: 15px;
+  width: 150px;
+  font-weight: bold;
+
+   
+}
+#green-title{
+    margin-top: -25px;
+}
+
+#loanAmount{
+  font-family: $family-primary !important;
+    font-size: 48px;
+    font-weight: 900;
+    color: $number-color;
+    margin-top: -50px;
+}
+.col-right, .col-left{
+  float: left; 
+  margin-top: -8%;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  width: 100px;
+  height: 100px;
+  padding: 0%;
+
+}
+.col-right-back, .col-left-back{
+  float: left; 
+  margin-top: -8%;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  width: 100px;
+  height: 100px;
+  padding: 0%;
+}
+.col-left-back{
+  position: relative;
+  left:4%;
+}
+.col-right-back{
+  left:22%;
+  position: relative;
+}
+.col-left{
+  position: relative;
+  left: 10%;
+
+}
+.col-right{
+ position: relative;
+ right: 10%;
+ 
+}
+.col-right:after{
+  content:"";
+  position: absolute;
+  z-index: -1;
+  top: 15%;
+  bottom: 0;
+  left: 15%;
+  height:50px;
+  border-left: 2px solid $gray-border;
+  transform: translate(-50%);
+}
+
+#small-num{
+    margin-top: -40%;
+    padding: 0px;
+}
+#big-num{
+  width:200px;
+  height:100px;
+  float: right;
+  margin-top: -17%;
+  margin-right: 20%;
+  padding: 0px;
+ 
+}
+#medium-num{
+  margin-top: -20%;
+  
+}
+#small-num-offer{
+  margin-top: 2%;
+ text-align: center;
+ font-size: 27px;
+ font-weight: bold;
+
+}
+hr{
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+  margin-top:-7%;
+}
+.button{
+  background-color:$primary;
+  color: white;
+  font-family: $family-primary !important;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  
+  @include border-radius(5px);
+  width: 200px;
+  height: 50px;
+  margin-top:-5%;
+  margin-left: 0%;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 0;
+
+}
+
+#normal-title{
+  padding: 0%;
+  margin: 0%;
+  height: 30px;
+  width: 300px;
+ 
+
+}
+#bold-num{
+  padding: 0%;
+  margin: 0%;
+  height: 30px;
+  width: 200px;
+ 
+}
+.button:hover{
+  color:white;
+}

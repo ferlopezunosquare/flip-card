@@ -1,0 +1,50 @@
+  <div class="columns is-centered">
+    <div class="column is-one-fifth">
+      <div class="flipper" [@flip]="flip">
+        <div class="sides front">
+          <ng-content select="flip-front"></ng-content>
+          <p class = "has-text-primary is-size-5 has-text-centered" id = "green-title">Loan Amount</p>
+          <h1 class = "has-text-dark is-size-2">${{loanInfo.LoanAmount}}</h1>
+          <div class = "col-right" style="width: 50%; float:right">
+            <p class = "has-text-primary is-size-5 has-text-centered" id = "green-title">Term</p>
+            <p class = "has-text-dark is-size-5  has-text-centered "id = "small-num">{{loanInfo.Term}} Months</p>
+          </div>
+          <div class = "vl">
+          </div>
+          <div class = "col-left" style="width: 50%; float:left">
+            <p class = "has-text-primary is-size-5 has-text-centered" id = "green-title">Rate</p>
+            <p class = "has-text-dark is-size-5  has-text-centered " id = "small-num">{{loanInfo.Rate}}%</p>
+          </div>
+          <p class = "has-text-dark is-size-4  has-text-centered " id = "big-num">${{loanInfo.MonthlyPay}} /month</p>
+          <a class = "button" (click) = "valueChanged()">
+            SELECT OFFER
+           </a>
+            <button type="button"(click)="toggleFront()" id ="flipFront" >SEE DETAILS</button> 
+        </div>
+        <div class="sides back">
+            <p class = "has-text-primary is-size-5 has-text-centered" id="green-title">Loan Amount</p>
+            <p class = "has-text-dark is-size-5  has-text-centered " id = "medium-num">${{loanInfo.LoanAmount}}</p>
+            <hr>
+            <div class = "col-right-back" style="width: 50%; float:right">
+              <p class = "has-text-dark is-size-6  has-text-centered has-text-weight-bold has-text-justified" id = "bold-num">${{loanInfo.MonthlyPay}}</p>
+              <p class = "has-text-dark is-size-6  has-text-centered has-text-weight-bold has-text-justified" id = "bold-num">{{loanInfo.Term}} Months</p>
+              <p class = "has-text-dark is-size-6  has-text-centered has-text-weight-bold has-text-justified" id = "bold-num">{{loanInfo.Rate}}%</p>
+              <p class = "has-text-dark is-size-6  has-text-centered has-text-weight-bold has-text-justified"id = "bold-num">{{loanInfo.OriginFee}}%</p>
+              <p class = "has-text-dark is-size-6  has-text-centered has-text-weight-bold has-text-justified"id = "bold-num">{{loanInfo.AnnualRate}}%</p>
+              <p class = "has-text-dark is-size-6  has-text-centered has-text-weight-bold has-text-justified" id = "bold-num">${{loanInfo.NetProc}}</p>
+          
+            </div>
+            <div class = "col-left-back" style="width: 50%; float:left">
+              <p class = "has-text-dark is-size-6  has-text-centered has-text-justified" id = "normal-title">Monthly Payment</p>
+              <p class = "has-text-dark is-size-6  has-text-centered has-text-justified"id = "normal-title">Loan Term</p>
+              <p class = "has-text-dark is-size-6  has-text-centered has-text-justified"id = "normal-title">Interest Rate</p>
+              <p class = "has-text-dark is-size-6  has-text-centered has-text-justified"id = "normal-title">One-Time Origination Fee</p>
+              <p class = "has-text-dark is-size-6  has-text-centered has-text-justified"id = "normal-title">Anual Percentage Rate</p>
+              <p class = "has-text-dark is-size-6  has-text-centered has-text-justified"id = "normal-title">Net Proceeds to You</p>
+            </div>
+            <button type="button"(click)="toggleBack()" id ="flipBack" >HIDE DETAILS</button> 
+          <ng-content select="flip-back"></ng-content>
+        </div>
+      </div>
+    </div>
+  
