@@ -1,10 +1,6 @@
 @import './src/styles.scss';
 @import "~font-awesome/scss/font-awesome";
-html {
-	-webkit-font-smoothing: antialiased!important;
-	-moz-osx-font-smoothing: grayscale!important;
-	-ms-font-smoothing: antialiased!important;
-}
+
 body {
 font-family: $family-primary !important;
   font-size:16px;
@@ -28,10 +24,8 @@ font-family: $family-primary !important;
 	margin-top: 3%;
 	margin-left: -5%;
 	width: 25px;
-	height: 30px;
-	
+	height: 30px;	
 }
-
 .md-stepper-horizontal .md-step:active {
 	border-radius: 15% / 75%;
 }
