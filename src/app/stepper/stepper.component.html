@@ -1,0 +1,22 @@
+<div class="md-stepper-horizontal">
+  <div class="md-step" *ngFor = "let step of steps; let i = index"> 
+    <div class="md-step-circle"[@status]="currentStatus" (click)="completeStep()" *ngIf = "i === currentStep"></div>
+    <div class="md-step-circle"[@status]="visitedStatus" (click)="completeStep()" *ngIf = "i < currentStep">
+      <span class = "fa fa-check"></span>
+    </div>
+    <div class="md-step-circle"[@status]="notVisitedStatus" (click)="completeStep()" *ngIf = "i > currentStep"></div>
+    <div class="md-step-title">{{step.text}}</div>
+    <div class="md-step-bar-left"[@status]="notVisitedBarStatus" *ngIf = "i > currentStep"></div>
+    <div class="md-step-bar-left"[@status]="visitedBarStatus"*ngIf = "i < currentStep"></div>
+    <div class="md-step-bar-right"[@status]="notVisitedBarStatus" *ngIf = "i > currentStep"></div>
+    <div class="md-step-bar-right"[@status]="visitedBarStatus"*ngIf = "i < currentStep"></div>
+    <div class="md-step-bar-left"[@status]="visitedBarStatus" *ngIf = "i === currentStep"></div>
+    <div class="md-step-bar-right"[@status]="notVisitedBarStatus"*ngIf = "i === currentStep"></div>
+  </div>
+</div>
+
+
+ 	
+
+
+
